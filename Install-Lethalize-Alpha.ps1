@@ -129,14 +129,14 @@ function Install ($arguments) {
     Write-Host "Installed BiggerLobby"
     Write-Host ""
 
-    # Download and install lateCompany
-    Write-Host "Downloading and installing LateCompany"
-    $lateCompVersion = Get-Arg $arguments "-latecompany"
-    $lateCompUrl = "https://thunderstore.io/package/download/BranchModding/LateCompany/$lateCompVersion/"
-    $lateCompStream = Request-Stream $lateCompUrl
-    Expand-Stream $lateCompStream $lethalCompanyPath
-    Write-Host "Installed lateCompany"
-    Write-Host ""
+    # # Download and install lateCompany
+    # Write-Host "Downloading and installing LateCompany"
+    # $lateCompVersion = Get-Arg $arguments "-latecompany"
+    # $lateCompUrl = "https://thunderstore.io/package/download/BranchModding/LateCompany/$lateCompVersion/"
+    # $lateCompStream = Request-Stream $lateCompUrl
+    # Expand-Stream $lateCompStream $lethalCompanyPath
+    # Write-Host "Installed lateCompany"
+    # Write-Host ""
 }
 
 try {
