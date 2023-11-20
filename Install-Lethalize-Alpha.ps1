@@ -1,6 +1,6 @@
 function Get-PlatformInfo {
     $arch = [System.Environment]::GetEnvironmentVariable("PROCESSOR_ARCHITECTURE")
-    
+
     switch ($arch) {
         "AMD64" { return "X64" }
         "IA64" { return "X64" }
@@ -60,7 +60,7 @@ function Install ($arguments) {
 
     foreach ($assetNode in $jsonObject.assets) {
         if ($null -eq $assetNode) { continue }
-        
+
         $asset = $assetNode
 
         $name = $asset.name
@@ -84,7 +84,7 @@ function Install ($arguments) {
     Write-Host "Downloading $assetUrl"
 
     $stream = Request-Stream $assetUrl
-    
+
     Write-Host "Downloaded $assetUrl"
     Write-Host ""
 
@@ -92,7 +92,7 @@ function Install ($arguments) {
     if ($null -eq $lethalCompanyPath) {
         throw "Steam Lethal Company install not found"
     }
-    
+
     $bepInExPath = Join-Path $lethalCompanyPath "BepInEx"
 
     Write-Host "Lethal Company path: $lethalCompanyPath"
@@ -127,6 +127,15 @@ function Install ($arguments) {
     $biggerLobbyStream = Request-Stream $biggerLobbyUrl
     Expand-Stream $biggerLobbyStream $lethalCompanyPath
     Write-Host "Installed BiggerLobby"
+    Write-Host ""
+
+    # Download and install walkieuse
+    Write-Host "Downloading and installing BiggerLobby"
+    $walkieUseVersion = Get-Arg $arguments "-walkieuse"
+    $walkieUseUrl = "https://thunderstore.io/package/download/Renegades/WalkieUse/$walkieUseVersion/"
+    $walkieUseStream = Request-Stream $walkieUseUrl
+    Expand-Stream $walkieUseStream $lethalCompanyPath
+    Write-Host "Installed WalkieUse"
     Write-Host ""
 
     # # Download and install lateCompany
