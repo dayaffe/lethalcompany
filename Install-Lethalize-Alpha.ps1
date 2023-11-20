@@ -130,7 +130,7 @@ function Install ($arguments) {
     Write-Host ""
 
     # Download and install walkieuse
-    Write-Host "Downloading and installing BiggerLobby"
+    Write-Host "Downloading and installing WalkieUse"
     $walkieUseVersion = Get-Arg $arguments "-walkieuse"
     $walkieUseUrl = "https://thunderstore.io/package/download/Renegades/WalkieUse/$walkieUseVersion/"
     $walkieUseStream = Request-Stream $walkieUseUrl
