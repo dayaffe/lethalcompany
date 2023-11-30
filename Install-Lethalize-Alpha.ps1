@@ -120,13 +120,13 @@ function Install ($arguments) {
     Write-Host "Installed LC_API"
     Write-Host ""
 
-    # Download and install biggerlobby
-    Write-Host "Downloading and installing BiggerLobby"
-    $biggerLobbyVersion = Get-Arg $arguments "-biggerlobby"
-    $biggerLobbyUrl = "https://thunderstore.io/package/download/bizzlemip/BiggerLobby/$biggerLobbyVersion/"
-    $biggerLobbyStream = Request-Stream $biggerLobbyUrl
-    Expand-Stream $biggerLobbyStream $lethalCompanyPath
-    Write-Host "Installed BiggerLobby"
+    # Download and install morecompany
+    Write-Host "Downloading and installing MoreCompany"
+    $moreCompanyVersion = Get-Arg $arguments "-morecompany"
+    $moreCompanyUrl = "https://thunderstore.io/package/download/notnotnotswipez/MoreCompany/$moreCompanyVersion/"
+    $moreCompanyStream = Request-Stream $moreCompanyUrl
+    Expand-Stream $moreCompanyStream $lethalCompanyPath
+    Write-Host "Installed MoreCompany"
     Write-Host ""
 
     # Download and install walkieuse
